@@ -1,42 +1,78 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import samayoLogo from "./assets/images/SamayoLogo.png";
+import figmaIcon from "./assets/images/figma.svg";
+import GithubIcon from "./assets/images/github.svg";
+import vscodeIcon from "./assets/images/vscode.svg";
+import AdobeIcon from "./assets/images/Adobe.svg";
+import work1Image from "./assets/images/work1.png";
+import work2bgImage from "./assets/images/work2bg.png";
+import work2aImage from "./assets/images/work2a.png";
+import work2bImage from "./assets/images/work2b.png";
+import work2cImage from "./assets/images/work2c.png";
+import work2dImage from "./assets/images/work2d.png";
+import work3Image from "./assets/images/work3.png";
+import phone1Image from "./assets/images/phone1.png";
+import phone2Image from "./assets/images/phone2.png";
+import phone3Image from "./assets/images/phone3.png";
+import phone4Image from "./assets/images/phone4.png";
+import phone5Image from "./assets/images/phone5.png";
+import project3Video from "./assets/videos/splashfurniture.mp4";
+import photo1about from "./assets/images/photo1about.png";
+import photo2about from "./assets/images/photo2about.png";
+import photo3about from "./assets/images/photo3about.png";
+import AdobePhotoshopIcon from "./assets/images/AdobePhotoshop.svg";
+import figmaIconAbout from "./assets/images/figma.svg";
+import framerIcon from "./assets/images/framer.svg";
+import pinterestIcon from "./assets/images/pinterest.svg";
+import GithubIconAbout from "./assets/images/github.svg";
+import vscodeIconAbout from "./assets/images/vscode.svg";
+import formsIcon from "./assets/images/forms.svg";
+
 
 const homeAssets = {
-  logo: "https://www.figma.com/api/mcp/asset/b8b9f8d7-56c5-446a-972f-efd746d08f04.png",
-  twitter: "https://www.figma.com/api/mcp/asset/15d3b5ad-e273-4a2e-a79a-0127cce2453d.png",
-  social1: "https://www.figma.com/api/mcp/asset/6a829078-e6e5-476b-9288-704edbe446e3.png",
-  social2: "https://www.figma.com/api/mcp/asset/b442fdd6-593e-4ca3-8f96-57ccbd0fb8fb.png",
-  arrow: "https://www.figma.com/api/mcp/asset/43d4f09c-4126-4924-b719-051aeb623e97.png",
-  tool1: "https://www.figma.com/api/mcp/asset/552a7ba4-8723-4f67-b942-36d8c28e5aa9.png",
-  tool2: "https://www.figma.com/api/mcp/asset/03791814-9352-4de4-a542-4c318e4400b2.png",
-  tool3: "https://www.figma.com/api/mcp/asset/de2403ac-31bb-402c-bc37-33213b2bd236.png",
-  desktop: "https://www.figma.com/api/mcp/asset/fd0fe944-ea18-41c8-a868-702096671f89.png",
-  work2bg: "https://www.figma.com/api/mcp/asset/6d30622f-b985-4ac7-8b93-2ccd1b5c25f7.svg",
-  work2a: "https://www.figma.com/api/mcp/asset/08d89992-c76e-4022-a25e-04a499e8119a.png",
-  work2b: "https://www.figma.com/api/mcp/asset/23fc17b7-e060-410f-a07a-819daa4a70ac.png",
-  work2c: "https://www.figma.com/api/mcp/asset/d357f027-6ed9-4c93-b03f-a29ac36a1b19.png",
-  work2d: "https://www.figma.com/api/mcp/asset/0824c0e1-dc7c-4abd-9f3d-016613d85c1d.png",
-  work3: "https://www.figma.com/api/mcp/asset/d6bd5ca5-bbe6-4f33-9570-9babd4162aee.png",
-  phone1: "https://www.figma.com/api/mcp/asset/160bb28f-31c9-4dbf-9ea2-d9a995175cf8.png",
-  phone2: "https://www.figma.com/api/mcp/asset/21b7a84b-3966-4588-84e0-615de9eb4d11.png",
-  phone3: "https://www.figma.com/api/mcp/asset/a7b32495-e818-4916-90bf-1f683809268d.png",
-  phone4: "https://www.figma.com/api/mcp/asset/be766ec1-3173-40cc-b2a8-67211dd66af8.png",
-  phone5: "https://www.figma.com/api/mcp/asset/fa862f1d-3af0-43a9-b47d-8a5f1faec1a2.png",
+  logo: samayoLogo,
+  twitter: "/images/twitter.png",
+  social1: "/images/social1.png",
+  social2: "/images/social2.png",
+  arrow: "/images/arrow.png",
+  tool1: figmaIcon,
+  tool2: GithubIcon,
+  tool3: vscodeIcon,
+  tool4: AdobeIcon,
+
+  desktop: work1Image,
+  work2bg: work2bgImage,
+  work2a: work2aImage,
+  work2b: work2bImage,
+  work2c: work2cImage,
+  work2d: work2dImage,
+
+  work3: work3Image,
+  project3Video: project3Video,
+
+  phone1: phone1Image,
+  phone2: phone2Image,
+  phone3: phone3Image,
+  phone4: phone4Image,
+  phone5: phone5Image,
 };
 
 const aboutAssets = {
-  logo: "https://www.figma.com/api/mcp/asset/59c0b10a-38e4-455a-a7b9-87184d733c40.png",
+  logo: samayoLogo,
   twitter: "https://www.figma.com/api/mcp/asset/289c324c-2a65-4822-bd9d-e6538179ffeb.png",
   social1: "https://www.figma.com/api/mcp/asset/16bb27b8-1e8d-455f-84a0-899f9c76acaf.png",
   social2: "https://www.figma.com/api/mcp/asset/ff3a22ef-363e-429a-81a5-422f5ca0f189.png",
-  photo1: "https://www.figma.com/api/mcp/asset/f77d1a7c-6796-4061-8425-ab99769f4f7b.png",
-  photo2: "https://www.figma.com/api/mcp/asset/b24efa45-8ddd-443d-b980-46f61cee6427.png",
-  photo3: "https://www.figma.com/api/mcp/asset/5e72833c-7c1b-423e-8a66-55866b393dac.png",
-  framer: "https://www.figma.com/api/mcp/asset/8cb2283e-bd95-4825-b052-7a33a2e2f97c.png",
-  figma: "https://www.figma.com/api/mcp/asset/18982f65-2126-4c62-969b-13f3de265acf.png",
-  pinterest: "https://www.figma.com/api/mcp/asset/fdd7a066-66ea-4700-ba42-0128d9ef52e7.png",
-  photoshop: "https://www.figma.com/api/mcp/asset/9ca649f1-0014-4665-829f-717905b1ac82.png",
-  forms: "https://www.figma.com/api/mcp/asset/cd77ab63-a0ee-464b-bf84-4517aac85868.png",
+  photo1: photo1about,
+  photo2: photo2about,
+  photo3: photo3about,
+  framer: framerIcon,
+  figma: figmaIconAbout,
+  pinterest: pinterestIcon,
+  photoshop: AdobePhotoshopIcon,
+  github: GithubIconAbout,
+  vscode: vscodeIconAbout,
+  forms: formsIcon,
   avatar1: "https://www.figma.com/api/mcp/asset/99eedde7-d23a-4006-a2f6-8ff2372f2479.png",
   avatar2: "https://www.figma.com/api/mcp/asset/aabaedd4-9942-4fae-9340-f147a3d9ee29.png",
   group3: "https://www.figma.com/api/mcp/asset/79d553a0-cecf-42af-bf09-ad753efaabcb.svg",
@@ -44,7 +80,7 @@ const aboutAssets = {
 };
 
 const contactAssets = {
-  logo: "https://www.figma.com/api/mcp/asset/124e222f-aeb1-4809-8b0b-0dcc622d06b9.png",
+  logo: samayoLogo,
   twitter: "https://www.figma.com/api/mcp/asset/8312d3ee-9368-4aaf-b52e-82904cdda354.png",
   instagram: "https://www.figma.com/api/mcp/asset/c51de828-63b4-4678-b4b8-0fb25221f4a1.png",
   facebook: "https://www.figma.com/api/mcp/asset/18e99f62-eb50-4a21-994f-75f36550c399.png",
@@ -67,12 +103,12 @@ const socialLinks = {
 const projectLinks = {
   project1: {
     title: "Website Project",
-    figma: "https://www.figma.com/design/E13Z4mjF0iFExQ7SGT8cVf/samuel-web-design",
+    figma: "https://www.figma.com/design/mIGEedTvWO3E2JP0yAOlrD/Untitled?node-id=43-2&t=ttgv3VJ68z5azw7g-1",
     behance: "https://www.behance.net/Samayo10432",
   },
   project2: {
     title: "Web App Project",
-    figma: "https://www.figma.com/design/E13Z4mjF0iFExQ7SGT8cVf/samuel-web-design",
+    figma: "https://www.figma.com/design/b5epNodiZ4F6ZqciO3LQZt/GROUP-C?node-id=24-2&t=ttgv3VJ68z5azw7g-1",
     behance: "https://www.behance.net/Samayo10432",
   },
   project3: {
@@ -82,15 +118,15 @@ const projectLinks = {
   },
   project4: {
     title: "Mobile App Project",
-    figma: "https://www.figma.com/design/E13Z4mjF0iFExQ7SGT8cVf/samuel-web-design",
+    figma: "https://www.figma.com/design/JQu4egVVpP6oSmqGgFJ2JZ/Bank-with-Antonia?node-id=0-1&t=ttgv3VJ68z5azw7g-1",
     behance: "https://www.behance.net/Samayo10432",
   },
 };
 
 function SocialIcon({ type }) {
   if (type === "twitter") return <svg viewBox="0 0 24 24" aria-hidden="true" className="social-icon-svg"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.38L6.49 22H3.38l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.9h1.73L8.26 4.02H6.4L17.8 19.9Z" fill="currentColor" /></svg>;
-  if (type === "instagram") return <svg viewBox="0 0 24 24" aria-hidden="true" className="social-icon-svg"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="2"/><circle cx="17.5" cy="6.7" r="1.2" fill="currentColor"/></svg>;
-  return <svg viewBox="0 0 24 24" aria-hidden="true" className="social-icon-svg"><path d="M13.4 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.5-1.46h1.7V4a22 22 0 0 0-2.47-.13c-2.45 0-4.13 1.5-4.13 4.25V10H7.3v3h2.7v8h3.4Z" fill="currentColor"/></svg>;
+  if (type === "instagram") return <svg viewBox="0 0 24 24" aria-hidden="true" className="social-icon-svg"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="17.5" cy="6.7" r="1.2" fill="currentColor" /></svg>;
+  return <svg viewBox="0 0 24 24" aria-hidden="true" className="social-icon-svg"><path d="M13.4 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.5-1.46h1.7V4a22 22 0 0 0-2.47-.13c-2.45 0-4.13 1.5-4.13 4.25V10H7.3v3h2.7v8h3.4Z" fill="currentColor" /></svg>;
 }
 
 function Socials({ assets, links = socialLinks }) {
@@ -163,7 +199,14 @@ function Home() {
   return <main className="home-page">
     <Header />
     <section className="hero" id="home"><p className="eyebrow">Hey there&nbsp; I m Samuel</p><h1>Freelance UI/UX Designer &amp; Web Designer</h1><p className="hero-copy">I help business grow by crafting amazing web experiences. If<br />you’re looking for a designer and developer that likes to get stuff<br />done, let’s talk.</p><CTA href="#work">see my work</CTA></section>
-    <section className="tools"><p>I had the pleasure of working with these tools</p><div className="tool-row"><img src={homeAssets.tool1} alt="Design tool" /><img src={homeAssets.tool2} alt="Design tool" /><img src={homeAssets.tool3} alt="Design tool" /><span className="tool-mark">↓</span></div></section>
+
+    <div className="tool-row">
+      <img src={homeAssets.tool1} alt="Figma" />
+      <img src={homeAssets.tool2} alt="GitHub" />
+      <img src={homeAssets.tool3} alt="VS Code" />
+      <img src={homeAssets.tool4} alt="Adobe" />
+      <span className="tool-mark">↓</span>
+    </div>
     <section className="work-intro" id="work"><h2>My Work</h2><p>I specialize in website design and landing pages, but I’ve also<br />designed successful Mobile and web apps.</p></section>
 
     <section className="project project-one">
@@ -181,12 +224,31 @@ function Home() {
       {activeProject === "project2" && <ProjectOptions project="project2" onClose={() => setActiveProject(null)} />}
     </section>
 
+
     <section className="project project-three">
-      <button className="project-image-button" type="button" onClick={() => openProject("project3")} aria-label="Open Dashboard Project options">
-        <img src={homeAssets.work3} alt="Dashboard project" />
-      </button>
-      {activeProject === "project3" && <ProjectOptions project="project3" onClose={() => setActiveProject(null)} />}
+      <div className="project-video-wrapper">
+        <video
+          className="project-video"
+          controls
+          playsInline
+          preload="metadata"
+          aria-label="Splash Furniture website walkthrough"
+        >
+          <source src={project3Video} type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+
+        <p className="project-video-caption">
+          Splash Furniture — Website Walkthrough
+        </p>
+
+        <a className="cta project-book-cta" href="/contact">
+          <span>Book a Project Like This</span>
+          <span className="cta-arrow">→</span>
+        </a>
+      </div>
     </section>
+
 
     <section className="project project-four">
       <button className="project-image-button project-four-button" type="button" onClick={() => openProject("project4")} aria-label="Open Mobile App Project options">
@@ -204,23 +266,26 @@ function About() {
   const a = aboutAssets;
   const [toolMode, setToolMode] = useState("design");
 
+
   const designTools = [
     [a.framer, "Framer"],
     [a.figma, "Figma"],
     [a.pinterest, "Pinterest"],
     [a.photoshop, "Adobe Photoshop"],
-    [a.forms, "Google Form"],
+    [a.forms, "Google Forms"],
   ];
 
   const developmentTools = [
-    ["https://cdn.simpleicons.org/visualstudiocode/007ACC", "VS Code"],
-    ["https://cdn.simpleicons.org/github/181717", "GitHub"],
+    [a.vscode, "VS Code"],
+    [a.github, "GitHub"],
     ["https://cdn.simpleicons.org/vercel/000000", "Vercel"],
     ["https://cdn.simpleicons.org/supabase/3ECF8E", "Supabase"],
     ["https://cdn.simpleicons.org/react/61DAFB", "React"],
   ];
 
-  const activeTools = toolMode === "design" ? designTools : developmentTools;
+  const activeTools =
+    toolMode === "design" ? designTools : developmentTools;
+
 
   return <main className="about-page">
     <Header about />
@@ -273,21 +338,29 @@ function Contact() {
       </section>
 
       <section className="contact-main">
-        <aside className="contact-info">
-          <h2>Have a project in<br />mind?</h2>
-          <p>Let’s discuss your idea, goals,<br />and what you want to build.</p>
-          <div className="contact-info-links">
-            <a href="mailto:aiyemomisamuel6@gmail.com"><img src={contactAssets.emailIcon} alt="" />aiyemomisamuel6@gmail.com</a>
-            <a href={socialLinks.whatsapp} target="_blank" rel="noreferrer"><span className="contact-link-icon">◉</span> WhatsApp: 08108421139</a>
-            <a href={socialLinks.behance} target="_blank" rel="noreferrer"><img src={contactAssets.behanceIcon} alt="" />Behance</a>
-            <a href="mailto:aiyemomisamuel6@gmail.com"><img src={contactAssets.locationIcon} alt="" />Available remotely</a>
-          </div>
-          <div className="contact-social-links">
-            <a href={socialLinks.facebook} target="_blank" rel="noreferrer"><span className="contact-social-icon"><SocialIcon type="facebook" /></span> Facebook</a>
-            <a href={socialLinks.instagram} target="_blank" rel="noreferrer"><span className="contact-social-icon"><SocialIcon type="instagram" /></span> Instagram</a>
-            <a href={socialLinks.twitter} target="_blank" rel="noreferrer"><span className="contact-social-icon"><SocialIcon type="twitter" /></span> Twitter / X</a>
-          </div>
-        </aside>
+
+        <div className="contact-info-links">
+          <a href="mailto:aiyemomisamuel6@gmail.com">
+            <span className="contact-link-icon" aria-hidden="true">✉</span>
+            aiyemomisamuel6@gmail.com
+          </a>
+
+          <a href={socialLinks.whatsapp} target="_blank" rel="noreferrer">
+            <span className="contact-link-icon" aria-hidden="true">◉</span>
+            WhatsApp: 08108421139
+          </a>
+
+          <a href={socialLinks.behance} target="_blank" rel="noreferrer">
+            <span className="contact-link-icon" aria-hidden="true">Bē</span>
+            Behance
+          </a>
+
+          <a href="#contact">
+            <span className="contact-link-icon" aria-hidden="true">⌖</span>
+            Available remotely
+          </a>
+        </div>
+
 
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="contact-form-row">
