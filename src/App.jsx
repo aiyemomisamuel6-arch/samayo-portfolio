@@ -17,8 +17,7 @@ import phone2Image from "./assets/images/phone2.png";
 import phone3Image from "./assets/images/phone3.png";
 import phone4Image from "./assets/images/phone4.png";
 import phone5Image from "./assets/images/phone5.png";
-import project3Video from "./assets/videos/splashfurniture.mp4";
-import photo1about from "./assets/images/photo1about.png";
+// import project3Video from "./assets/videos/splashfurniture.mp4";import photo1about from "./assets/images/photo1about.png";
 import photo2about from "./assets/images/photo2about.png";
 import photo3about from "./assets/images/photo3about.png";
 import AdobePhotoshopIcon from "./assets/images/AdobePhotoshop.svg";
@@ -49,7 +48,7 @@ const homeAssets = {
   work2d: work2dImage,
 
   work3: work3Image,
-  project3Video: project3Video,
+
 
   phone1: phone1Image,
   phone2: phone2Image,
@@ -227,16 +226,10 @@ function Home() {
 
     <section className="project project-three">
       <div className="project-video-wrapper">
-        <video
-          className="project-video"
-          controls
-          playsInline
-          preload="metadata"
-          aria-label="Splash Furniture website walkthrough"
-        >
-          <source src={project3Video} type="video/mp4" />
-          Your browser does not support video playback.
-        </video>
+        <div className="project-video-placeholder">
+          <p> Splash Furniture — Website Walkthrough </p>
+          <p>Video coming soon</p>
+        </div>
 
         <p className="project-video-caption">
           Splash Furniture — Website Walkthrough
