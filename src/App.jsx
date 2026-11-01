@@ -20,7 +20,7 @@ import phone5Image from "./assets/images/phone5.png";
 // import project3Video from "./assets/videos/splashfurniture.mp4";import photo1about from "./assets/images/photo1about.png";
 import photo2about from "./assets/images/photo2about.png";
 import photo3about from "./assets/images/photo3about.png";
-import AdobePhotoshopIcon from "./assets/images/AdobePhotoshop.svg";
+import AdobePhotoshopIcon from "./assets/images/adobephotoshop.svg";
 import figmaIconAbout from "./assets/images/figma.svg";
 import framerIcon from "./assets/images/framer.svg";
 import pinterestIcon from "./assets/images/pinterest.svg";
